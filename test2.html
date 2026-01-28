@@ -11,8 +11,8 @@
   <a target="_blank" href="https://google.com">Other</a>
   <script>
     var hidden = false;
-    document.querySelectorAll("a").forEach(function(el){
-      el.addEventListener("click",function(){
+    document.querySelectorAll("a").forEach(function(el) {
+      el.addEventListener("click",function() {
         window.top.postMessage({ type: 'linkClicked', url: el.href }, '*');
       });
     });

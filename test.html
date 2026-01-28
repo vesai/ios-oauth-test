@@ -37,6 +37,7 @@
       el.addEventListener("click",function(){
         setTimeout(function(){
           const url = el.getAttribute("data-delayed-href");
+          alert("We will open");
           window.open(url, '_blank');
           window.webkit.messageHandlers.oauthStart.postMessage({ url });
         }, 1000);
