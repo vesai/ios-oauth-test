@@ -24,6 +24,8 @@
   <button data-delayed-href="https://google.com">Google</button>
   <h2>In iframe</h2>
   <iframe src="test2.html"></iframe>
+  <div>Has navigator.credentials</div>
+  <div id="nav-creds"></div>
   <script>
     document.querySelectorAll("a").forEach(function(el){
       el.addEventListener("click",function(){
@@ -53,6 +55,8 @@
           window.webkit.messageHandlers.oauthStart.postMessage({ url });
       });
     });
+
+    document.getElementById("nav-creds").textContent = navigator.credentials + '';
   </script>
 </body>
 </html>
