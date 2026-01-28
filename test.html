@@ -22,6 +22,12 @@ TARGET BLACNK
         window.webkit.messageHandlers.oauthStart.postMessage({ url: el.href });
       });
     });
+
+    window.addEventListener("message", function(event) {
+      if (event.data && event.data.type === 'linkClicked') {
+        window.webkit.messageHandlers.oauthStart.postMessage({ url: event.data.url });
+      }
+    });
   </script>
 </body>
 </html>
