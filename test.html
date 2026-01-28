@@ -26,6 +26,9 @@
   <iframe src="test2.html"></iframe>
   <div>Has navigator.credentials</div>
   <div id="nav-creds"></div>
+  <h2>Navigate to frame</h2>
+  <button id="to-frame">Go to iframe content</button>
+  <iframe id="target-frame"></iframe>
   <script>
     document.querySelectorAll("a").forEach(function(el){
       el.addEventListener("click",function(){
@@ -57,6 +60,11 @@
     });
 
     document.getElementById("nav-creds").textContent = navigator.credentials + '';
+
+    document.getElementById("to-frame").addEventListener("click", function() {
+      const frame = document.getElementById("target-frame");
+      frame.src = "https://apix-oauth.chase.com/aggregator-oauth/v1/mobile/authorize?client_id=AKOYA_NWIMJLB1OQ&redirect_uri=https%3A%2F%2Fidp.ddp.akoya.com%2Fcallback&response_type=code&scope=aggregator&state=ys5e5vgugbreemqg5kvskywkx";
+    });
   </script>
 </body>
 </html>
