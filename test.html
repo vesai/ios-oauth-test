@@ -7,5 +7,14 @@
 </head>
 <body>
   <iframe src="test2.html"></iframe>
+  <div id="logs"></div>
+  <script>
+    window.addEventListener("message", function(event) {
+      const logDiv = document.getElementById("logs");
+      const p = document.createElement("p");
+      p.textContent = `Received message: ${event.data}`;
+      logDiv.appendChild(p);
+    });
+  </script>
 </body>
 </html>
